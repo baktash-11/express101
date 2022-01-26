@@ -1,0 +1,125 @@
+:root {
+    --background: #113f67;
+    --foreground: #e7eaf6;
+    --background-2: #1d1f31c2;
+    --foreground-2: #38598b;
+}
+
+* {
+    background-color: var(--background);
+    color: var(--foreground);
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+#content {
+    max-width: 960px;
+    margin: 0 auto;
+    color: var(--foreground-2);
+}
+
+#content>* {
+    background-color: var(--background-2);
+    text-align: center;
+    padding: 40px;
+}
+
+@media screen and (min-width: 200px) {
+    #content {
+        display: grid;
+        grid-template-columns: (4, 1fr);
+        grid-auto-rows: minmax(150px, auto);
+        /* grid-template-rows: minmax(200px, auto); */
+        grid-gap: 10px;
+        grid-template-areas:
+            "header header header header"
+            "footer footer footer footer"
+            "main main main main"
+            "main main main main"
+            "section section section section"
+            "nav nav nav nav"
+            "aside aside aside aside"
+        ;
+    }
+}
+
+@media screen and (min-width: 760px) {
+    #content {
+        display: grid;
+        grid-template-columns: (4, 1fr);
+        grid-auto-rows: minmax(150px, auto);
+        /* grid-template-rows: minmax(200px, auto); */
+        grid-gap: 10px;
+        grid-template-areas:
+            "header header header header"
+            "footer footer footer footer"
+            "main main main main"
+            "main main main main"
+            "section section section section"
+            "section section section section"
+            "nav nav aside aside"
+        ;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    #content {
+        display: grid;
+        grid-template-columns: (4, 1fr);
+        grid-auto-rows: minmax(150px, auto);
+        /* grid-template-rows: minmax(200px, auto); */
+        grid-gap: 10px;
+        grid-template-areas:
+            "header header header header"
+            "aside main main main"
+            ". main main main"
+            "nav main main main"
+            "section section section section"
+            "section section section section"
+            "footer footer footer footer";
+    }
+}
+
+#beauty {
+    /* width: 100%; */
+    margin: 0;
+    padding: 0;
+    border-radius: 50%;
+}
+
+header {
+    grid-area: header;
+}
+
+main {
+    grid-area: main;
+}
+
+section {
+    grid-area: section;
+}
+
+aside {
+    grid-area: aside;
+}
+
+nav {
+    grid-area: nav;
+}
+
+footer {
+    grid-area: footer;
+}
+
+/* input:checked +*{
+background-color: #203340;
+border-radius: 50px;
+opacity: 0.4;
+} */
+input:checked+#content>* {
+    background-color: var(--foreground-2);
+    /* border-radius: 50px; */
+    color: var(--foreground);
+
+}
