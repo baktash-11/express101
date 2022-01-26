@@ -1,0 +1,18 @@
+1 bring http 
+const http = require ('http');
+2 create a request (it takes a call back method)
+
+const server= http.createServer((req, res)=>{
+    3 write header 
+    res.writeHead(200, 'content-type':'text/html');
+    res.write(<h2> Hello world!</h2>);
+    res.end();
+});
+
+create server 
+server.listen(3000, ()=>{
+    console.log('http://localhost:3000');
+});
+
+in bash (terminal)
+curl -v localhost:3000
